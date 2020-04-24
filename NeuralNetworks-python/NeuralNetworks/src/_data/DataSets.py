@@ -42,7 +42,7 @@ class BLOOD_TRANSFUSION:
     input = DataSets.add_bias(DataSets.read('blood-transfusion', 'input.txt'))
     output = DataSets.read('blood-transfusion', 'output.txt', True)
 
-# 
+# https://www.kaggle.com/kumargh/pimaindiansdiabetescsv
 class DIABETES:
     input = DataSets.add_bias(DataSets.read('diabetes', 'input.txt'))
     output = DataSets.read('diabetes', 'output.txt', True)
