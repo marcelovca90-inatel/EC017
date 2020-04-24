@@ -46,7 +46,7 @@ public class Adaline implements NeuralNetwork
             // calculate mse before weights adjustments
             for (int i = 0; i < dataSet.getNumberOfSamples(); i++)
                 vArray[i] = MathUtils.dotProduct(x[i], w);
-            mseBefore = MathUtils.meanSquaredError(vArray, d);
+            mseBefore = MathUtils.meanSquaredError(d, vArray);
 
             // adjust synaptic weights
             for (int i = 0; i < dataSet.getNumberOfSamples(); i++)
@@ -59,14 +59,14 @@ public class Adaline implements NeuralNetwork
             // calculate mse after weights adjustments
             for (int i = 0; i < dataSet.getNumberOfSamples(); i++)
                 vArray[i] = MathUtils.dotProduct(x[i], w);
-            mseAfter = MathUtils.meanSquaredError(vArray, d);
+            mseAfter = MathUtils.meanSquaredError(d, vArray);
 
             epoch++;
             System.err.printf("Epoch: %d\tWeights: %s\tError: %s\n", epoch, Arrays.toString(w), mseAfter);
             plotDataX.add((double) epoch);
             plotDataY.add(mseAfter);
 
-        } while (Double.compare(Math.abs(mseAfter - mseBefore), e) >= 0);
+        } while (Double.compare(Math.abs(mseAfter - mseBefore), e) > 0);
 
         return Arrays.copyOf(w, w.length);
     }

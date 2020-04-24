@@ -31,7 +31,7 @@ class Adaline:
             print('Epoch: {}\tWeights: {}\tError: {}'.format(epoch, w, mse_after))
             self.plot_data_x.append(epoch)
             self.plot_data_y.append(mse_after)
-            if abs(mse_after - mse_before) < self.e:
+            if abs(mse_after - mse_before) <= self.e:
                 break
         return w
 
