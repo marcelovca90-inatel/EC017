@@ -1,8 +1,3 @@
-'''
-Created on 21 de set de 2018
-
-@author: marcelocysneiros
-'''
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
 import datetime as dt

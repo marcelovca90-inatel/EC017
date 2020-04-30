@@ -1,8 +1,3 @@
-'''
-Created on 23 de ago de 2019
-
-@author: marcelovca90
-'''
 import numpy as np
 import os, sys
 from numpy.random import sample

@@ -1,8 +1,3 @@
-'''
-Created on 21 de set de 2019
-
-@author: marcelovca90
-'''
 import numpy as np
 import random as rnd
 
