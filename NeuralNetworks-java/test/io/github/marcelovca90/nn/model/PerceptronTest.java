@@ -31,7 +31,7 @@ public class PerceptronTest
         ((Perceptron) network).plotErrorPerEpoch();
 
         // then
-        assertEquals(1.0, accuracy, DELTA);
+        assertEquals(100.0, accuracy, DELTA);
     }
 
     @Test
@@ -47,7 +47,7 @@ public class PerceptronTest
         ((Perceptron) network).plotErrorPerEpoch();
 
         // then
-        assertEquals(1.0, accuracy, DELTA);
+        assertEquals(100.0, accuracy, DELTA);
     }
 
     @Test

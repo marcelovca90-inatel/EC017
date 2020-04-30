@@ -95,8 +95,8 @@ public class MultilayerPerceptron
                 correct++;
             }
         }
-        double accuracy = (double) correct / (double) total;
-        System.out.printf("Accuracy: %.2f%% (%d/%d)\n", 100.0 * accuracy, correct, total);
+        double accuracy = 100.0 * ((double) correct / (double) total);
+        System.out.printf("Accuracy: %.2f%% (%d/%d)\n", accuracy, correct, total);
         return accuracy;
     }
 
