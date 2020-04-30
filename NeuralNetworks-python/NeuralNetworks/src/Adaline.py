@@ -1,8 +1,3 @@
-'''
-Created on 23 de ago de 2019
-
-@author: marcelovca90
-'''
 import numpy as np
 from _data import DataSets
 from _math import ActivationFunctions, MathUtils
@@ -10,10 +5,10 @@ from _plot import PlotUtils
 
 class Adaline:
 
-    def __init__(self):
-        self.n = 1e-6 # learning rate
-        self.g = ActivationFunctions.heaviside_symmetric # activation function
-        self.e = 1e-5 # error variation tolerance
+    def __init__(self, n, g, e):
+        self.n = n # learning rate
+        self.g = g # activation function
+        self.e = e # error variation tolerance
         self.plot_data_x = [] # epochs for plotting
         self.plot_data_y = [] # eqms for plotting
 
@@ -28,7 +23,7 @@ class Adaline:
                 w = np.add(w, np.multiply(x[i], self.n * (d[i] - v)))
             epoch = epoch + 1
             mse_after = MathUtils.mean_squared_error(w, x, d)
-            print('Epoch: {}\tWeights: {}\tError: {}'.format(epoch, w, mse_after))
+            print(f"Epoch: {epoch}\tWeights: {w}\tError: {mse_after:.12f}")
             self.plot_data_x.append(epoch)
             self.plot_data_y.append(mse_after)
             if abs(mse_after - mse_before) <= self.e:
@@ -47,24 +42,29 @@ class Adaline:
             y = self.test(w, x[i])
             if (y == d[i]):
                 correct = correct + 1
-        accuracy = float(correct) / float(total)
-        print('Accuracy: {:.2f}% ({}/{})'.format(100.0 * accuracy, correct, total))
+        accuracy = 100.0 * (float(correct) / float(total))
+        print(f"Accuracy: {accuracy:.2f}% ({correct}/{total})")
         return accuracy
 
-if  __name__ == '__main__':
+if __name__ == "__main__":
 
     # set random number generator seed
     np.random.seed(42)
 
     # set floating point formatting when printing
-    np.set_printoptions(formatter={'float': '{: 0.6f}'.format})
+    np.set_printoptions(formatter={"float": "{: 0.6f}".format})
 
     # load data
     x = DataSets.BLOOD_TRANSFUSION.input
     d = DataSets.BLOOD_TRANSFUSION.output
 
+    # define the network parameters
+    n = 1e-6
+    g = ActivationFunctions.heaviside_symmetric
+    e = 1e-5
+
     # create the neural network
-    nn = Adaline()
+    nn = Adaline(n, g, e)
 
     # train the neural network
     w = nn.train(x, d)
@@ -73,4 +73,4 @@ if  __name__ == '__main__':
     acc = nn.evaluate(w, x, d)
     
     # plot epoch versus error data
-    PlotUtils.plot(nn.plot_data_x, 'epoch', nn.plot_data_y, 'mse')
+    PlotUtils.plot(nn.plot_data_x, "epoch", nn.plot_data_y, "mse")
