@@ -37,6 +37,11 @@ class BLOOD_TRANSFUSION:
     input = DataSets.add_bias(DataSets.read('blood-transfusion', 'input.txt', False))
     output = DataSets.read('blood-transfusion', 'output.txt', True)
 
+# http://archive.ics.uci.edu/ml/datasets/Cryotherapy+Dataset+
+class CRYOTHERAPY:
+    input = DataSets.add_bias(DataSets.read('cryotherapy', 'input.txt', False))
+    output = DataSets.read('cryotherapy', 'output.txt', True)
+
 # https://www.kaggle.com/kumargh/pimaindiansdiabetescsv
 class DIABETES:
     input = DataSets.add_bias(DataSets.read('diabetes', 'input.txt', False))
