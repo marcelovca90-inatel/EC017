@@ -1,4 +1,5 @@
-image: gitpod/workspace-full-vnc:branch-jx-python-tk
+image: gitpod/workspace-full-vnc
+
 ports:
   - port: 6080
     onOpen: open-preview
@@ -8,4 +9,3 @@ ports:
     onOpen: ignore
 tasks:
   - init: pip install matplotlib numpy
-    command: cd python/

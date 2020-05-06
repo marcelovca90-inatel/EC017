@@ -1,15 +1,18 @@
+#!/usr/bin/env python3
+
 import numpy as np
 from _data import DataSets
 from _math import ActivationFunctions
 from _plot import PlotUtils
 
+
 class Perceptron:
 
     def __init__(self, n, g):
-        self.n = n # learning rate
-        self.g = g # activation function
-        self.plot_data_x = [] # epochs for plotting
-        self.plot_data_y = [] # error for plotting
+        self.n = n  # learning rate
+        self.g = g  # activation function
+        self.plot_data_x = []  # epochs for plotting
+        self.plot_data_y = []  # error for plotting
 
     def train(self, x, d):
         k = len(x)
@@ -34,7 +37,7 @@ class Perceptron:
         v = np.dot(np.transpose(w), x)
         y = self.g(v)
         return y
-    
+
     def evaluate(self, w, x, d):
         correct = 0
         total = len(x)
@@ -46,21 +49,23 @@ class Perceptron:
         print(f"Accuracy: {accuracy:.2f}% ({correct}/{total})")
         return accuracy
 
+
 if __name__ == "__main__":
 
     # set random number generator seed
-    np.random.seed(NUMERO_DE_MATRICULA)
+    np.random.seed(1190)
 
     # set floating point formatting when printing
     np.set_printoptions(formatter={"float": "{: 0.6f}".format})
 
     # load data
-    x = DataSets.NOME_DO_DATASET.input
-    d = DataSets.NOME_DO_DATASET.output
+    x = DataSets.NP1_BLOBS.input
+    d = DataSets.NP1_BLOBS.output
 
     # define the network parameters
-    n = TAXA_DE_APRENDIZAGEM
-    g = FUNCAO_DE_ATIVACAO
+    n = 0.001
+
+    g = ActivationFunctions.heaviside
 
     # create the neural network
     nn = Perceptron(n, g)
@@ -70,6 +75,6 @@ if __name__ == "__main__":
 
     # evaluate the neural network
     acc = nn.evaluate(w, x, d)
-    
+
     # plot epoch versus error data
     PlotUtils.plot(nn.plot_data_x, "epoch", nn.plot_data_y, "error")
