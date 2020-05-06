@@ -1,4 +1,5 @@
-image: gitpod/workspace-full-vnc
+image:
+  file: .gitpod.Dockerfile
 
 ports:
   - port: 6080
@@ -8,4 +9,4 @@ ports:
   - port: 35900
     onOpen: ignore
 tasks:
-  - init: pip install matplotlib numpy
+  - init: pip3 install matplotlib numpy
