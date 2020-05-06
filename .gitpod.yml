@@ -8,4 +8,4 @@ ports:
   - port: 35900
     onOpen: ignore
 tasks:
-  - init: pip install matplotlib numpy
+  - init: pip3 install matplotlib numpy
