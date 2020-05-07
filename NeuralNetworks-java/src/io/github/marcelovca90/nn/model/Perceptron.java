@@ -59,7 +59,7 @@ public class Perceptron implements NeuralNetwork
             plotDataX.add((double) epoch);
             plotDataY.add(error ? 1.0 : 0.0);
 
-        } while (error && epoch < 10000);
+        } while (error && epoch < 100);
 
         return Arrays.copyOf(w, w.length);
     }
@@ -94,10 +94,11 @@ public class Perceptron implements NeuralNetwork
 
     public void plotErrorPerEpoch()
     {
-        PlotUtils.plot(
-            plotDataX.stream().mapToDouble(Double::doubleValue).toArray(),
-            "epoch",
-            plotDataY.stream().mapToDouble(Double::doubleValue).toArray(),
-            "error");
+        PlotUtils
+            .plot(
+                plotDataX.stream().mapToDouble(Double::doubleValue).toArray(),
+                "epoch",
+                plotDataY.stream().mapToDouble(Double::doubleValue).toArray(),
+                "error");
     }
 }

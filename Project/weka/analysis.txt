@@ -1,0 +1,33 @@
+Tester:     weka.experiment.PairedCorrectedTTester -G 3,4,5 -D 1 -R 2 -S 0.05 -result-matrix "weka.experiment.ResultMatrixPlainText -mean-prec 2 -stddev-prec 2 -col-name-width 0 -row-name-width 25 -mean-width 0 -stddev-width 0 -sig-width 0 -count-width 5 -print-col-names -print-row-names -enum-col-names"
+Analysing:  Percent_correct
+Datasets:   8
+Resultsets: 8
+Confidence: 0.05 (two tailed)
+Sorted by:  -
+Date:       11/23/19 9:51 PM
+
+
+Dataset                   (1) meta.Fil | (2) meta. (3) meta. (4) meta. (5) meta. (6) meta. (7) meta. (8) meta.
+--------------------------------------------------------------------------------------------------------------
+breast-cancer              (1)   67.13 |   65.03 *   69.23 v   62.94 *   62.24 *   67.13     51.05 *   65.73 *
+horse-colic                (1)   77.17 |   77.72 v   63.04 *   75.54 *   78.26 v   73.91 *   76.09 *   79.89 v
+german_credit              (1)   70.00 |   69.00 *   70.00     68.20 *   64.20 *   65.20 *   68.00 *   73.60 v
+heart-statlog              (1)   81.48 |   79.26 *   68.15 *   71.85 *   68.15 *   77.78 *   71.85 *   81.48  
+hepatitis                  (1)   87.01 |   79.22 *   79.22 *   77.92 *   68.83 *   71.43 *   79.22 *   84.42 *
+labor                      (1)   92.86 |   85.71 *   67.86 *   82.14 *   85.71 *   75.00 *   78.57 *   92.86  
+sonar                      (1)   76.92 |   67.31 *   62.50 *   88.46 v   70.19 *   80.77 v   72.12 *   84.62 v
+vote                       (1)   89.45 |   94.04 v   93.12 v   92.66 v   95.87 v   94.04 v   95.87 v   96.33 v
+--------------------------------------------------------------------------------------------------------------
+                               (v/ /*) |   (2/0/6)   (2/1/5)   (2/0/6)   (2/0/6)   (2/1/5)   (1/0/7)   (4/2/2)
+
+
+Key:
+(1) meta.FilteredClassifier '-F \"supervised.instance.ClassBalancer -num-intervals 10\" -W bayes.BayesNet -- -D -Q bayes.net.search.local.K2 -- -P 1 -S BAYES -E bayes.net.estimate.SimpleEstimator -- -A 0.5' -4523450618538717400
+(2) meta.FilteredClassifier '-F \"supervised.instance.ClassBalancer -num-intervals 10\" -W functions.SimpleLogistic -- -I 0 -M 500 -H 50 -W 0.0' -4523450618538717400
+(3) meta.FilteredClassifier '-F \"supervised.instance.ClassBalancer -num-intervals 10\" -W functions.VotedPerceptron -- -I 1 -E 1.0 -S 1 -M 10000' -4523450618538717400
+(4) meta.FilteredClassifier '-F \"supervised.instance.ClassBalancer -num-intervals 10\" -W lazy.IBk -- -K 1 -W 0 -A \"weka.core.neighboursearch.LinearNNSearch -A \\\"weka.core.EuclideanDistance -R first-last\\\"\"' -4523450618538717400
+(5) meta.FilteredClassifier '-F \"supervised.instance.ClassBalancer -num-intervals 10\" -W rules.DecisionTable -- -X 1 -S \"BestFirst -D 1 -N 5\"' -4523450618538717400
+(6) meta.FilteredClassifier '-F \"supervised.instance.ClassBalancer -num-intervals 10\" -W trees.RandomTree -- -K 0 -M 1.0 -V 0.001 -S 1' -4523450618538717400
+(7) meta.FilteredClassifier '-F \"supervised.instance.ClassBalancer -num-intervals 10\" -W trees.REPTree -- -M 2 -V 0.001 -N 3 -S 1 -L -1 -I 0.0' -4523450618538717400
+(8) meta.FilteredClassifier '-F \"supervised.instance.ClassBalancer -num-intervals 10\" -W trees.RandomForest -- -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1' -4523450618538717400
+

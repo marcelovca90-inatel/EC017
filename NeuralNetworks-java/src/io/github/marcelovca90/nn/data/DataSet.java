@@ -46,6 +46,18 @@ public class DataSet
         return getSamples().length;
     }
 
+    @Override
+    public String toString()
+    {
+        StringBuilder builder = new StringBuilder();
+        builder.append(super.toString());
+        builder.append("\nSamples:");
+        Arrays.stream(this.samples).forEach(s -> builder.append("\n" + Arrays.toString(s)));
+        builder.append("\nLabels:");
+        Arrays.stream(this.labels).forEach(s -> builder.append("\n" + s));
+        return builder.toString();
+    }
+
     private double[] concatenateArrays(double[] a, double[] b)
     {
         double[] both = Arrays.copyOf(a, a.length + b.length);
