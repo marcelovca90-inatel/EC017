@@ -2,7 +2,6 @@ package io.github.marcelovca90.nn.math;
 
 public class Sigmoid implements ActivationFunction
 {
-
     @Override
     public double compute(double v)
     {

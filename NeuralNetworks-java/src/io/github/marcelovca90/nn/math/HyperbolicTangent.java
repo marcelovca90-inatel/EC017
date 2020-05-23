@@ -2,7 +2,6 @@ package io.github.marcelovca90.nn.math;
 
 public class HyperbolicTangent implements ActivationFunction
 {
-
     @Override
     public double compute(double v)
     {
