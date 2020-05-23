@@ -59,7 +59,7 @@ public class Perceptron implements NeuralNetwork
             plotDataX.add((double) epoch);
             plotDataY.add(error ? 1.0 : 0.0);
 
-        } while (error && epoch < 100);
+        } while (error && epoch < 10000);
 
         return Arrays.copyOf(w, w.length);
     }

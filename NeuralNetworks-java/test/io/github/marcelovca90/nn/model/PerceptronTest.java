@@ -6,7 +6,7 @@ import static org.junit.Assert.assertNotEquals;
 import org.junit.Test;
 
 import io.github.marcelovca90.nn.data.DataSet;
-import io.github.marcelovca90.nn.data.DataSetReader;
+import io.github.marcelovca90.nn.data.sample.LogicGateAND;
 import io.github.marcelovca90.nn.data.sample.LogicGateOR;
 import io.github.marcelovca90.nn.data.sample.LogicGateXOR;
 import io.github.marcelovca90.nn.math.ActivationFunction;
@@ -22,7 +22,7 @@ public class PerceptronTest
     public void trainTestEvaluatePlot_withLogicGateAND_shouldConverge()
     {
         // given
-        DataSet dataSet = DataSetReader.readFromFolder("data/logic-gate-and");
+        DataSet dataSet = new LogicGateAND();
         System.out.println(dataSet);
 
         NeuralNetwork network = new Perceptron(LEARNING_RATE, ACTIVATION_FUNCTION);
