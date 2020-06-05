@@ -14,7 +14,7 @@ public class LogicGateAND extends DataSet
     private static final double[] _LABELS = new double[] {
             0.0,
             0.0,
-            1.0,
+            0.0,
             1.0
     };
 

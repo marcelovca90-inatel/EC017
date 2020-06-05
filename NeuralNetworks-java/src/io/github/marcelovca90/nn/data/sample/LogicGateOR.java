@@ -13,7 +13,7 @@ public class LogicGateOR extends DataSet
 
     private static final double[] _LABELS = new double[] {
             0.0,
-            0.0,
+            1.0,
             1.0,
             1.0
     };
