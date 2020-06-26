@@ -61,7 +61,3 @@ class NP1_BLOBS:
 class NP1_MOONS:
     input = DataSets.add_bias(DataSets.read('np1-moons', 'input.txt', False))
     output = DataSets.read('np1-moons', 'output.txt', True)
-
-class FERNANDO:
-    input = DataSets.add_bias(DataSets.read('fernando', 'input.txt', False))
-    output = DataSets.read('fernando', 'output.txt', True)
