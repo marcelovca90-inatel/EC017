@@ -13,7 +13,7 @@ public class HeavisideSymmetric implements ActivationFunction
         // v is equal to zero
         else if (comparisonResult == 0)
             return 0.0;
-        // v is greater than or equal to zero
+        // v is greater than zero
         else
             return +1.0;
     }

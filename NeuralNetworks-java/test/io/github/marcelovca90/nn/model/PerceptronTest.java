@@ -65,6 +65,6 @@ public class PerceptronTest
         ((Perceptron) network).plotErrorPerEpoch();
 
         // then
-        assertNotEquals(1.0, accuracy, DELTA);
+        assertNotEquals(100.0, accuracy, DELTA);
     }
 }

@@ -33,7 +33,7 @@ public class Perceptron implements NeuralNetwork
     {
         x = dataSet.getSamples();
         d = dataSet.getLabels();
-        w = new Random(42L).doubles(dataSet.getNumberOfFeatures()).toArray();
+        w = new Random().doubles(dataSet.getNumberOfFeatures()).toArray();
 
         int epoch = 0;
         boolean error;
