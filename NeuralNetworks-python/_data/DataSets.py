@@ -51,13 +51,3 @@ class DIABETES:
 class TIC_TAC_TOE_ENDGAME:
     input = DataSets.add_bias(DataSets.read('tic-tac-toe-endgame', 'input.txt', False))
     output = DataSets.read('tic-tac-toe-endgame', 'output.txt', True)
-
-# Conjunto de dado usado na NP1 de EC017 (2020 / 1o semestre) - questao 5
-class NP1_BLOBS:
-    input = DataSets.add_bias(DataSets.read('np1-blobs', 'input.txt', False))
-    output = DataSets.read('np1-blobs', 'output.txt', True)
-
-# Conjunto de dado usado na NP1 de EC017 (2020 / 1o semestre) - questao 6
-class NP1_MOONS:
-    input = DataSets.add_bias(DataSets.read('np1-moons', 'input.txt', False))
-    output = DataSets.read('np1-moons', 'output.txt', True)

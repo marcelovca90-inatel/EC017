@@ -49,18 +49,18 @@ class Perceptron:
 if __name__ == "__main__":
 
     # set random number generator seed
-    # np.random.seed(42)
+    np.random.seed(NUMERO_DE_MATRICULA)
 
     # set floating point formatting when printing
     np.set_printoptions(formatter={"float": "{: 0.6f}".format})
 
     # load data
-    x = DataSets.LOGIC_GATE_OR.input
-    d = DataSets.LOGIC_GATE_OR.output
+    x = DataSets.NOME_DO_DATASET.input
+    d = DataSets.NOME_DO_DATASET.output
 
     # define the network parameters
-    n = 1e-2
-    g = ActivationFunctions.heaviside
+    n = TAXA_DE_APRENDIZADO
+    g = ActivationFunctions.FUNCAO_DE_ATIVACAO
 
     # create the neural network
     nn = Perceptron(n, g)

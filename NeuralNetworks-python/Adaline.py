@@ -49,19 +49,19 @@ class Adaline:
 if __name__ == "__main__":
 
     # set random number generator seed
-    np.random.seed(42)
+    np.random.seed(NUMERO_DE_MATRICULA)
 
     # set floating point formatting when printing
     np.set_printoptions(formatter={"float": "{: 0.6f}".format})
 
     # load data
-    x = DataSets.BLOOD_TRANSFUSION.input
-    d = DataSets.BLOOD_TRANSFUSION.output
+    x = DataSets.NOME_DO_DATASET.input
+    d = DataSets.NOME_DO_DATASET.output
 
     # define the network parameters
-    n = 1e-6
-    g = ActivationFunctions.heaviside_symmetric
-    e = 1e-5
+    n = TAXA_DE_APRENDIZADO
+    g = ActivationFunctions.FUNCAO_DE_ATIVACAO
+    e = TOLERANCIA_DE_ERRO
 
     # create the neural network
     nn = Adaline(n, g, e)
