@@ -1,4 +1,4 @@
-# Projeto Prático de EC017 (Redes Neurais)
+# Projeto Prático de EC017 (Redes Neurais) - 2020/1
 
 ## Informações
 - **Objetivo**: pesquisar e empregar outras técnicas de aprendizado de máquina (diferentes de redes neurais artificiais) em problemas de classificação do mundo real.
